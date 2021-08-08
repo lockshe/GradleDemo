@@ -1,0 +1,40 @@
+buildscript {
+    ext.kotlin_version = '1.5.0'
+
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath fileTree(dir: 'buildLibs', include: ['*.jar'])
+        classpath("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+    }
+}
+
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.20'
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+    }
+}
+
+
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
